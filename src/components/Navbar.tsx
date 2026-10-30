@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           {/* Action Button: Resume */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="/resume.pdf"
+              href="/Resume%20Dian%20Raisa%20Gumilar.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-surface border border-sage-border text-charcoal hover:border-forest hover:text-forest hover:shadow-subtle transition-all duration-200"
@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             })}
             <div className="pt-3 border-t border-sage-border mt-2">
               <a
-                href="/resume.pdf"
+                href="/Resume%20Dian%20Raisa%20Gumilar.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}

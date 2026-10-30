@@ -38,8 +38,8 @@ export const Contact: React.FC = () => {
     },
     {
       label: 'Curriculum Vitae',
-      value: 'resume.pdf (Latest Version)',
-      href: '/resume.pdf',
+      value: 'Resume Dian Raisa Gumilar.pdf',
+      href: '/Resume%20Dian%20Raisa%20Gumilar.pdf',
       icon: <FileText className="w-5 h-5 text-forest" />,
       actionText: 'Open PDF',
     },

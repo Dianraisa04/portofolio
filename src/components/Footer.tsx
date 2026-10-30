@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="/resume.pdf"
+              href="/Resume%20Dian%20Raisa%20Gumilar.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-full bg-surface border border-sage-border text-charcoal-muted hover:text-forest hover:border-forest transition-colors"
