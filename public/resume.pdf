@@ -1,0 +1,75 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1245 >>
+stream
+BT
+/F1 20 Tf
+50 720 Td
+(Dian Raisa Gumilar - Curriculum Vitae) Tj
+0 -28 Td
+/F1 12 Tf
+(Informatics Graduate | AI / Machine Learning & Software Development) Tj
+0 -20 Td
+(Email: dianraisa.dev@gmail.com | LinkedIn: linkedin.com/in/dianraisa | GitHub: github.com/dianraisa) Tj
+0 -36 Td
+/F1 14 Tf
+(EDUCATION) Tj
+0 -18 Td
+/F1 11 Tf
+(Institut Teknologi Nasional (ITENAS) Bandung - Bachelor of Informatics) Tj
+0 -32 Td
+/F1 14 Tf
+(EXPERIENCE) Tj
+0 -18 Td
+/F1 11 Tf
+(- Machine Learning Laboratory Assistant, Informatics ITENAS) Tj
+0 -16 Td
+(- Research Intern / Contributor, BRIN (National Research and Innovation Agency)) Tj
+0 -32 Td
+/F1 14 Tf
+(CERTIFICATIONS & AWARDS) Tj
+0 -18 Td
+/F1 11 Tf
+(- Huawei Certified ICT Associate (HCIA) - AI (Score 960/1000)) Tj
+0 -16 Td
+(- Huawei ICT Competition 2024-2025 National Finalist - Computing Track) Tj
+0 -32 Td
+/F1 14 Tf
+(FEATURED PROJECTS) Tj
+0 -18 Td
+/F1 11 Tf
+(- Research Collaboration Recommendation (NLP, Graph & Recommendation Engine)) Tj
+0 -16 Td
+(- Research Trend Analysis (BERTopic, Topic Modeling & Visualization)) Tj
+0 -16 Td
+(- Facial Expression Recognition (PyTorch CNN, Real-time Computer Vision)) Tj
+0 -16 Td
+(- American Sign Language (ASL) Translator (MediaPipe, OpenCV, Gesture Recognition)) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000000 00000 n 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1608
+%%EOF

@@ -1,0 +1,21 @@
+Please build a personal portfolio website project using React + Vite + Tailwind CSS in this current folder based on the following specifications:
+
+1. Visual Identity & Theme:
+- Main Background: Soft Sage Gray (#E8ECE5)
+- Primary Text: Charcoal Green (#29332D)
+- Accent (Buttons/Links/Active): Forest Green (#45634F)
+- Card Surface: Off White (#F6F7F3) with Muted Sage border (#CDD5CA)
+- Typography: Heading with 'Space Grotesk', Body & Navigation with 'Plus Jakarta Sans'
+
+2. Page Structure & Components (Single Page Portfolio):
+- Navbar: Text logo "dian.raisa", navigation links (About, Projects, Experience, Contact), and a "Resume" button linking to public/resume.pdf.
+- Hero Section: Headline "Hi, I'm Dian Raisa. I build things with AI and technology.", a concise description highlighting an Informatics graduate interested in AI/ML, NLP, Computer Vision, and software development, accompanied by CTA buttons ("Explore Projects" & "Contact Me").
+- About Section: Academic background in Informatics at ITENAS, core interests in AI/ML, and hands-on experience as a lab assistant and research intern.
+- Featured Projects: 2-column grid layout with category filter tabs (All, AI & Machine Learning, NLP & Data Science, Computer Vision, Mobile & IoT). Include 4 key projects: Research Collaboration Recommendation, Research Trend Analysis, Facial Expression Recognition, and ASL Translator, with subtle hover elevation effects.
+- Experience Section: Clean vertical timeline (Machine Learning Lab Assistant, BRIN Research Project, etc.).
+- Skills Section: Categorized tool badges (Python, PyTorch, BERTopic, OpenCV, Flutter, Git, etc.) without arbitrary percentage progress bars.
+- Contact & Footer: Direct links for Email, LinkedIn, GitHub, and Resume.
+
+3. Code Architecture & Best Practices:
+- Decouple and structure content data into local files at src/data/projects.ts, src/data/experience.ts, and src/data/skills.ts so content can be updated without modifying UI components.
+- Generate all necessary configuration files (package.json, tailwind.config.js, vite.config.ts, etc.) and run dependency installation if required.
