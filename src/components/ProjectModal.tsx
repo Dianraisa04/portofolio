@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Github, ExternalLink, Check, ChevronRight, BarChart3, Layers, Target, Wrench } from 'lucide-react';
+import { X, ExternalLink, Check, ChevronRight, BarChart3, Layers, Target, Wrench } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectModalProps {
@@ -157,17 +157,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
         {/* Modal Footer */}
         <div className="p-4 sm:p-5 border-t border-sage-border/80 bg-surface-muted/30 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium rounded-full bg-forest text-white hover:bg-forest-hover transition-colors shadow-subtle"
-              >
-                <Github className="w-4 h-4" />
-                <span>Source Code</span>
-              </a>
-            )}
             {project.demoUrl && project.demoUrl !== '#' && (
               <a
                 href={project.demoUrl}

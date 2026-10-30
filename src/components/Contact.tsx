@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Mail, Linkedin, Github, FileText, Copy, Check, Send, ArrowUpRight, MessageSquare } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const emailAddress = 'dian.gumilar04@gmail.com';
+  const whatsappNumber = '+62 812-2140-9559';
+  const whatsappUrl = 'https://wa.me/6281221409559';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
@@ -13,16 +16,16 @@ export const Contact: React.FC = () => {
 
   const contactLinks = [
     {
-      label: 'Email Directly',
-      value: emailAddress,
-      href: `mailto:${emailAddress}`,
-      icon: <Mail className="w-5 h-5 text-forest" />,
-      actionText: 'Compose mail',
+      label: 'WhatsApp Contact',
+      value: whatsappNumber,
+      href: whatsappUrl,
+      icon: <WhatsAppIcon className="w-5 h-5 text-forest" />,
+      actionText: 'Chat on WhatsApp',
     },
     {
       label: 'LinkedIn Profile',
-      value: 'linkedin.com/in/dian-raisa-gumilar-132312308',
-      href: 'https://www.linkedin.com/in/dian-raisa-gumilar-132312308/',
+      value: 'linkedin.com/in/dian-raisa-gumilar',
+      href: 'https://www.linkedin.com/in/dian-raisa-gumilar/',
       icon: <Linkedin className="w-5 h-5 text-forest" />,
       actionText: 'Connect',
     },

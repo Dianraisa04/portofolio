@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FolderGit2, Github, ExternalLink, ArrowUpRight, Sparkles } from 'lucide-react';
+import { FolderGit2, ExternalLink, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Project, ProjectCategory } from '../types';
 import { projects, projectCategories } from '../data/projects';
 import { ProjectModal } from './ProjectModal';
@@ -127,17 +127,6 @@ export const Projects: React.FC = () => {
                   </button>
 
                   <div className="flex items-center gap-2">
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full text-charcoal-muted hover:text-forest hover:bg-forest-subtle/50 transition-colors"
-                        aria-label={`View ${project.title} source on GitHub`}
-                      >
-                        <Github className="w-4 h-4" />
-                      </a>
-                    )}
                     {project.demoUrl && project.demoUrl !== '#' && (
                       <a
                         href={project.demoUrl}

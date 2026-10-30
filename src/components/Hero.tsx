@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowDown, Mail, Github, Linkedin, Sparkles, Terminal } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Hero: React.FC = () => {
   return (
@@ -59,13 +60,22 @@ export const Hero: React.FC = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/dian-raisa-gumilar-132312308/"
+                href="https://www.linkedin.com/in/dian-raisa-gumilar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-full bg-surface border border-sage-border text-charcoal-muted hover:text-forest hover:border-forest transition-colors"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://wa.me/6281221409559"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-full bg-surface border border-sage-border text-charcoal-muted hover:text-forest hover:border-forest transition-colors"
+                aria-label="WhatsApp Contact"
+              >
+                <WhatsAppIcon className="w-5 h-5" />
               </a>
             </div>
           </div>

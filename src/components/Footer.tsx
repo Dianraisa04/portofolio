@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -35,7 +36,16 @@ export const Footer: React.FC = () => {
               <Mail className="w-4 h-4" />
             </a>
             <a
-              href="https://www.linkedin.com/in/dian-raisa-gumilar-132312308/"
+              href="https://wa.me/6281221409559"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-full bg-surface border border-sage-border text-charcoal-muted hover:text-forest hover:border-forest transition-colors"
+              aria-label="WhatsApp"
+            >
+              <WhatsAppIcon className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dian-raisa-gumilar/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-full bg-surface border border-sage-border text-charcoal-muted hover:text-forest hover:border-forest transition-colors"
