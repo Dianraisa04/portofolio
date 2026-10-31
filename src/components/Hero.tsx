@@ -20,14 +20,14 @@ export const Hero: React.FC = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-heading text-charcoal tracking-tight leading-[1.15] mb-6">
             Hi, I'm Dian Raisa.{' '}
             <span className="block mt-1 text-forest">
-              I build things with AI and technology.
+              Turning ideas into intelligent solutions.
             </span>
           </h1>
 
           {/* Concise Description */}
           <p className="text-lg sm:text-xl text-charcoal-muted leading-relaxed mb-8 max-w-2xl font-normal">
-            Informatics graduate from ITENAS with hands-on experience in Machine Learning,
-            Natural Language Processing, Computer Vision, and full-stack software development.
+            With an interest in AI and software engineering, I work across Machine Learning,
+            Natural Language Processing, Computer Vision, and software development.
             I enjoy transforming theoretical models into reliable, human-centric software solutions.
           </p>
 
