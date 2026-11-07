@@ -13,10 +13,10 @@ export const Experience: React.FC = () => {
             <span>Career Path</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold font-heading text-charcoal tracking-tight">
-            Work & Research Experience
+            Work, Research & Organizational Experience
           </h2>
           <p className="text-charcoal-muted text-base mt-2 max-w-xl">
-            A chronological timeline of laboratory assistant roles, research initiatives at BRIN, and academic foundations.
+            A chronological timeline of research initiatives at BRIN, laboratory assistant roles, student association governance, and academic foundations.
           </p>
         </div>
 

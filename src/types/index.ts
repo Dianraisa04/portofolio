@@ -44,7 +44,7 @@ export interface ExperienceItem {
   organization: string;
   location?: string;
   period: string;
-  type: 'Work' | 'Research' | 'Education' | 'Community';
+  type: 'Work' | 'Research' | 'Education' | 'Organization' | 'Community';
   description: string;
   contributions: string[];
   skills: string[];

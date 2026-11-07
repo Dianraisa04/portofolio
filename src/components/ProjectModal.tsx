@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, Check, ChevronRight, BarChart3, Layers, Target, Wrench, Sparkles, Image as ImageIcon } from 'lucide-react';
+import { X, ExternalLink, Check, ChevronLeft, ChevronRight, BarChart3, Layers, Target, Wrench, Sparkles, Image as ImageIcon } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectModalProps {
@@ -15,9 +15,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   onSelectProject,
   allProjects = []
 }) => {
+  const currentIndex = project ? allProjects.findIndex(p => p.id === project.id) : -1;
+  const prevProject = allProjects.length > 1 && currentIndex !== -1
+    ? (currentIndex > 0 ? allProjects[currentIndex - 1] : allProjects[allProjects.length - 1])
+    : null;
+  const nextProject = allProjects.length > 1 && currentIndex !== -1
+    ? (currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : allProjects[0])
+    : null;
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && prevProject && onSelectProject) onSelectProject(prevProject);
+      if (e.key === 'ArrowRight' && nextProject && onSelectProject) onSelectProject(nextProject);
     };
 
     if (project) {
@@ -29,14 +39,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
       document.body.style.overflow = 'auto';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [project, onClose]);
+  }, [project, onClose, prevProject, nextProject, onSelectProject]);
 
   if (!project) return null;
-
-  const currentIndex = allProjects.findIndex(p => p.id === project.id);
-  const nextProject = currentIndex !== -1 && currentIndex < allProjects.length - 1 
-    ? allProjects[currentIndex + 1] 
-    : allProjects[0];
 
   const isAIML = project.category === 'AI & Machine Learning' || project.category === 'Computer Vision';
 
@@ -236,15 +241,31 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             )}
           </div>
 
-          {nextProject && onSelectProject && (
-            <button
-              onClick={() => onSelectProject(nextProject)}
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-forest hover:text-forest-hover transition-colors ml-auto"
-            >
-              <span>Next: {nextProject.title.slice(0, 24)}...</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          )}
+          <div className="flex items-center gap-2 sm:gap-3 ml-auto">
+            {prevProject && onSelectProject && (
+              <button
+                type="button"
+                onClick={() => onSelectProject(prevProject)}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-sage-border bg-surface text-xs sm:text-sm font-medium text-charcoal hover:text-forest hover:border-forest transition-colors shadow-xs"
+                title={`Previous: ${prevProject.title}`}
+              >
+                <ChevronLeft className="w-4 h-4" />
+                <span>Previous</span>
+              </button>
+            )}
+
+            {nextProject && onSelectProject && (
+              <button
+                type="button"
+                onClick={() => onSelectProject(nextProject)}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-forest text-white text-xs sm:text-sm font-medium hover:bg-forest-hover transition-colors shadow-subtle"
+                title={`Next: ${nextProject.title}`}
+              >
+                <span>Next</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

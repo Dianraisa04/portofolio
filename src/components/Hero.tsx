@@ -115,24 +115,6 @@ export const Hero: React.FC = () => {
                     className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500"
                     loading="eager"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-80"></div>
-
-                  {/* Floating Identity Badge */}
-                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-surface/90 backdrop-blur-md border border-sage-border/60 shadow-subtle">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-xs font-bold font-heading text-charcoal">
-                          Dian Raisa Gumilar, S.Kom
-                        </p>
-                        <p className="text-[11px] text-forest font-medium">
-                          Huawei ICT National Finalist • AI Researcher
-                        </p>
-                      </div>
-                      <span className="p-1.5 rounded-lg bg-forest-subtle text-forest shrink-0">
-                        <Sparkles className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
