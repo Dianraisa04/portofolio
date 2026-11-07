@@ -47,6 +47,21 @@ export const experiences: ExperienceItem[] = [
     skills: ['Python', 'SQL', 'Algorithms & Data Structures', 'Linux', 'Teaching']
   },
   {
+    id: 'hmif-leadership',
+    role: 'Staff of Internal Audit & Cadre Development',
+    organization: 'Himpunan Mahasiswa Informatika (HMIF) ITENAS',
+    location: 'Bandung, Indonesia',
+    period: '2023 - 2024',
+    type: 'Community',
+    description: 'Served in student association governance, operational compliance reviews, and leadership development for informatics cohorts.',
+    contributions: [
+      'Conducted periodic evaluations and accountability reviews of student association programs and financial expenditures.',
+      'Supervised operational adherence to institutional regulations, ensuring organizational governance and transparency.',
+      'Designed and executed leadership training, character building, and orientation curricula for incoming informatics students.'
+    ],
+    skills: ['Leadership', 'Organizational Governance', 'Curriculum Design', 'Public Speaking', 'Mentoring']
+  },
+  {
     id: 'itenas-education',
     role: 'Bachelor of Informatics (S.Kom.)',
     organization: 'Institut Teknologi Nasional (ITENAS)',

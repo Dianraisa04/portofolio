@@ -25,7 +25,8 @@ export const certifications: CertificationItem[] = [
     issuer: 'Huawei Technologies',
     date: '2023',
     score: 'Contest Distinction',
-    description: 'Demonstrated proficiency in modern routing, switching, network security, and enterprise infrastructure protocols.',
-    skills: ['Computer Networks', 'Routing & Switching', 'Network Security']
+    description: 'Demonstrated proficiency in modern routing, switching, network security, and enterprise infrastructure protocols with team contest honors.',
+    skills: ['Computer Networks', 'Routing & Switching', 'Network Security'],
+    docImage: '/images/huawei-network-team.png'
   }
 ];

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Github, FileText, Copy, Check, Send, ArrowUpRight, MessageSquare } from 'lucide-react';
+import { Mail, Linkedin, Github, FileText, Copy, Check, ArrowUpRight, MessageSquare } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Contact: React.FC = () => {
@@ -64,17 +64,40 @@ export const Contact: React.FC = () => {
 
         {/* 2-Column Contact Card / Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Main Direct Action Card */}
+          {/* Main Direct Action Card with Passport Photo */}
           <div className="lg:col-span-5 p-7 sm:p-8 rounded-2xl bg-surface border border-sage-border shadow-subtle flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-forest-subtle border border-forest-border/40 flex items-center justify-center text-forest mb-6">
-                <Send className="w-6 h-6" />
+              {/* Passport Photo & Identity Header */}
+              <div className="flex items-center gap-4 mb-6 pb-6 border-b border-sage-border/70">
+                <div className="relative shrink-0">
+                  <img
+                    src="/images/passport-photo.jpg"
+                    alt="Dian Raisa Gumilar Passport Photo"
+                    className="w-16 h-20 sm:w-20 sm:h-24 object-cover object-top rounded-xl border-2 border-forest-border/80 shadow-subtle bg-sage-bg/60"
+                  />
+                  <span className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-forest opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-forest border-2 border-white"></span>
+                  </span>
+                </div>
+                <div>
+                  <span className="inline-block px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-forest bg-forest-subtle rounded-full mb-1.5">
+                    Official Identification
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading text-charcoal leading-tight">
+                    Dian Raisa Gumilar
+                  </h3>
+                  <p className="text-xs text-charcoal-muted mt-1 font-medium">
+                    Informatics S.Kom • Bandung, Indonesia
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold font-heading text-charcoal mb-3">
+
+              <h4 className="text-lg font-bold font-heading text-charcoal mb-2">
                 Let's start a conversation.
-              </h3>
+              </h4>
               <p className="text-sm text-charcoal-muted leading-relaxed mb-6">
-                Whether you have an open position, a research query, or simply want to chat about Machine Learning and technology, my inbox is open.
+                Whether you have an open position, a research query, or want to discuss machine learning and software systems, feel free to reach out directly.
               </p>
 
               {/* Copyable Email Pill */}
@@ -102,14 +125,26 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            <a
-              href={`mailto:${emailAddress}?subject=Inquiry%20from%20Portfolio`}
-              className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-forest text-white font-medium hover:bg-forest-hover shadow-subtle hover:shadow-card transition-all"
-            >
-              <Mail className="w-4 h-4" />
-              <span>Send Email Directly</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
+            <div className="space-y-3">
+              <a
+                href={`mailto:${emailAddress}?subject=Inquiry%20from%20Portfolio`}
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-forest text-white font-medium hover:bg-forest-hover shadow-subtle hover:shadow-card transition-all"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Send Email Directly</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+
+              <a
+                href="/portfolio-dossier.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-full bg-surface border border-sage-border text-xs sm:text-sm font-medium text-charcoal hover:text-forest hover:border-forest transition-colors"
+              >
+                <FileText className="w-4 h-4 text-forest" />
+                <span>Download Portfolio Dossier (PDF)</span>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links Grid */}

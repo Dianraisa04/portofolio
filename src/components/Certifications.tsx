@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, CheckCircle, ShieldCheck } from 'lucide-react';
+import { Award, CheckCircle, ShieldCheck, Image as ImageIcon, ExternalLink } from 'lucide-react';
 import { certifications } from '../data/certifications';
 
 export const Certifications: React.FC = () => {
@@ -43,6 +43,21 @@ export const Certifications: React.FC = () => {
                 <p className="text-xs text-charcoal-muted leading-relaxed mb-4">
                   {item.description}
                 </p>
+
+                {item.docImage && (
+                  <div className="mb-4">
+                    <a
+                      href={item.docImage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface border border-sage-border text-xs font-semibold text-forest hover:border-forest transition-colors shadow-xs group"
+                    >
+                      <ImageIcon className="w-3.5 h-3.5" />
+                      <span>Contest Photo Documentation</span>
+                      <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform opacity-70" />
+                    </a>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-wrap gap-1.5 pt-3 border-t border-sage-border/60">
