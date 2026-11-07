@@ -110,7 +110,7 @@ export const Hero: React.FC = () => {
               <div className="relative rounded-3xl bg-surface border border-sage-border/90 shadow-card p-3 sm:p-3.5 overflow-hidden">
                 <div className="relative rounded-2xl overflow-hidden aspect-[3/4] bg-sage-bg/60">
                   <img
-                    src="/images/self-photo.png"
+                    src="/images/photo-pose.png"
                     alt="Dian Raisa Gumilar"
                     className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500"
                     loading="eager"

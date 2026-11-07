@@ -62,6 +62,12 @@ export interface SkillCategory {
   }[];
 }
 
+export interface DocumentationImage {
+  url: string;
+  title: string;
+  caption?: string;
+}
+
 export interface CertificationItem {
   id: string;
   title: string;
@@ -72,4 +78,5 @@ export interface CertificationItem {
   description: string;
   skills: string[];
   docImage?: string;
+  gallery?: DocumentationImage[];
 }
