@@ -21,11 +21,24 @@ export const certifications: CertificationItem[] = [
   },
   {
     id: 'huawei-ict-network',
-    title: 'Huawei ICT Competition – Network Track Recognition',
+    title: 'Huawei ICT Competition – 1st Prize Winner (Network Track)',
     issuer: 'Huawei Technologies',
     date: '2023',
-    score: 'Contest Distinction',
-    description: 'Demonstrated proficiency in modern routing, switching, network security, and enterprise infrastructure protocols.',
-    skills: ['Computer Networks', 'Routing & Switching', 'Network Security']
+    score: '1st Prize Winner',
+    description: 'Awarded 1st Prize in the Huawei ICT Competition Network Track, demonstrating exceptional expertise in enterprise network architecture, routing & switching protocols, and network security.',
+    skills: ['Computer Networks', 'Routing & Switching', 'Network Security', 'Enterprise Systems'],
+    docImage: '/images/huawei-network-self.png',
+    gallery: [
+      {
+        url: '/images/huawei-network-self.png',
+        title: 'Huawei ICT Competition 1st Prize Award Ceremony',
+        caption: 'Dian Raisa Gumilar receiving the 1st Prize recognition at the Huawei ICT Competition ceremony.'
+      },
+      {
+        url: '/images/huawei-network-team.png',
+        title: 'Competition Team & Delegation',
+        caption: 'Delegation team on stage celebrating the 1st Prize victory in the Huawei Network Track.'
+      }
+    ]
   }
 ];

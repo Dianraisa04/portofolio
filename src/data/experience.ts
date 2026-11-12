@@ -2,6 +2,20 @@ import { ExperienceItem } from '../types';
 
 export const experiences: ExperienceItem[] = [
   {
+    id: 'hmif-internal-audit',
+    role: 'Staff of the Internal Audit Unit',
+    organization: 'Informatics Student Association of ITENAS (HMIF ITENAS)',
+    location: 'Bandung, Indonesia',
+    period: 'Jul 2024 - Dec 2024',
+    type: 'Organization',
+    description: 'Conducted periodic evaluations and accountability reviews of student association programs and financial expenditures, ensuring operational adherence to institutional regulations.',
+    contributions: [
+      'Conducted periodic evaluations and accountability reviews of student association programs and financial expenditures.',
+      'Supervised operational adherence to institutional regulations, ensuring organizational governance and transparency.'
+    ],
+    skills: ['Internal Audit', 'Organizational Governance', 'Compliance Review', 'Financial Accountability']
+  },
+  {
     id: 'brin-research-intern',
     role: 'Research Intern / AI Contributor',
     organization: 'Badan Riset dan Inovasi Nasional (BRIN)',
@@ -30,6 +44,20 @@ export const experiences: ExperienceItem[] = [
       'Delivered workshops on exploratory data analysis and model deployment best practices using modern developer tools.'
     ],
     skills: ['Machine Learning', 'PyTorch', 'Scikit-learn', 'Python', 'Mentoring', 'Curriculum Design']
+  },
+  {
+    id: 'hmif-cadre-development',
+    role: 'Staff of the Cadre Development Division',
+    organization: 'Informatics Student Association of ITENAS (HMIF ITENAS)',
+    location: 'Bandung, Indonesia',
+    period: 'Sep 2023 - Jun 2024',
+    type: 'Organization',
+    description: 'Designed and executed leadership training, character building, and orientation curricula for incoming informatics cohorts, facilitating group mentoring sessions to cultivate collective problem-solving.',
+    contributions: [
+      'Designed and executed leadership training, character building, and orientation curricula for incoming informatics cohorts.',
+      'Facilitated group mentoring sessions to cultivate organizational loyalty, communication skills, and collective problem-solving.'
+    ],
+    skills: ['Leadership Training', 'Cadre Mentorship', 'Curriculum Design', 'Public Speaking', 'Team Facilitation']
   },
   {
     id: 'computer-lab-assistant',

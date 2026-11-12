@@ -1,8 +1,51 @@
-import React from 'react';
-import { Award, CheckCircle, ShieldCheck } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Award, CheckCircle, ShieldCheck, Image as ImageIcon, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { certifications } from '../data/certifications';
+import { DocumentationImage } from '../types';
 
 export const Certifications: React.FC = () => {
+  const [activeGallery, setActiveGallery] = useState<{ title: string; images: DocumentationImage[] } | null>(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const openGallery = (title: string, images: DocumentationImage[], startIndex = 0) => {
+    setActiveGallery({ title, images });
+    setActiveImageIndex(startIndex);
+  };
+
+  const closeGallery = () => {
+    setActiveGallery(null);
+    setActiveImageIndex(0);
+  };
+
+  const prevImage = () => {
+    if (!activeGallery) return;
+    setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : activeGallery.images.length - 1));
+  };
+
+  const nextImage = () => {
+    if (!activeGallery) return;
+    setActiveImageIndex((prev) => (prev < activeGallery.images.length - 1 ? prev + 1 : 0));
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!activeGallery) return;
+      if (e.key === 'Escape') closeGallery();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    };
+
+    if (activeGallery) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeGallery]);
+
   return (
     <section className="py-16 border-t border-sage-border/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,6 +86,23 @@ export const Certifications: React.FC = () => {
                 <p className="text-xs text-charcoal-muted leading-relaxed mb-4">
                   {item.description}
                 </p>
+
+                {/* Pop-up Gallery Trigger */}
+                {item.gallery && item.gallery.length > 0 && (
+                  <div className="mb-4">
+                    <button
+                      type="button"
+                      onClick={() => openGallery(item.title, item.gallery!)}
+                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-forest-subtle/70 border border-forest-border/60 text-xs font-semibold text-forest hover:bg-forest hover:text-white transition-all shadow-xs group"
+                    >
+                      <ImageIcon className="w-3.5 h-3.5" />
+                      <span>View Documentation Gallery</span>
+                      <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-forest/10 group-hover:bg-white/20 text-forest group-hover:text-white font-bold">
+                        {item.gallery.length} photos
+                      </span>
+                    </button>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-wrap gap-1.5 pt-3 border-t border-sage-border/60">
@@ -60,6 +120,111 @@ export const Certifications: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Pop-up Gallery Lightbox Modal */}
+      {activeGallery && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-charcoal/85 backdrop-blur-md animate-in fade-in duration-200"
+          onClick={closeGallery}
+        >
+          <div
+            className="relative w-full max-w-4xl bg-surface rounded-2xl border border-sage-border shadow-card-hover overflow-hidden flex flex-col my-auto max-h-[95vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Gallery Header */}
+            <div className="p-4 sm:p-5 border-b border-sage-border/80 flex items-center justify-between bg-surface-muted/50">
+              <div className="pr-4">
+                <span className="inline-block px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-forest bg-forest-subtle rounded-full mb-1">
+                  Documentation Gallery
+                </span>
+                <h3 className="text-base sm:text-lg font-bold font-heading text-charcoal truncate">
+                  {activeGallery.title}
+                </h3>
+              </div>
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="text-xs font-mono font-medium text-charcoal-muted">
+                  {activeImageIndex + 1} / {activeGallery.images.length}
+                </span>
+                <button
+                  onClick={closeGallery}
+                  className="p-2 rounded-full text-charcoal-muted hover:text-charcoal hover:bg-sage-border/50 transition-colors focus:outline-none"
+                  aria-label="Close gallery"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Main Image Stage */}
+            <div className="relative p-2 sm:p-6 flex items-center justify-center bg-charcoal/5 min-h-[340px] max-h-[65vh] overflow-hidden">
+              <img
+                src={activeGallery.images[activeImageIndex].url}
+                alt={activeGallery.images[activeImageIndex].title}
+                className="max-w-full max-h-[60vh] object-contain rounded-xl shadow-subtle select-none"
+              />
+
+              {/* Prev Button */}
+              {activeGallery.images.length > 1 && (
+                <button
+                  onClick={prevImage}
+                  className="absolute left-3 sm:left-6 p-2 sm:p-2.5 rounded-full bg-surface/90 hover:bg-surface border border-sage-border text-charcoal shadow-card hover:scale-105 transition-all focus:outline-none"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+              )}
+
+              {/* Next Button */}
+              {activeGallery.images.length > 1 && (
+                <button
+                  onClick={nextImage}
+                  className="absolute right-3 sm:right-6 p-2 sm:p-2.5 rounded-full bg-surface/90 hover:bg-surface border border-sage-border text-charcoal shadow-card hover:scale-105 transition-all focus:outline-none"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              )}
+            </div>
+
+            {/* Caption & Thumbnail Strip */}
+            <div className="p-4 sm:p-5 border-t border-sage-border/80 bg-surface flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="max-w-xl">
+                <h4 className="text-sm font-bold font-heading text-charcoal">
+                  {activeGallery.images[activeImageIndex].title}
+                </h4>
+                {activeGallery.images[activeImageIndex].caption && (
+                  <p className="text-xs text-charcoal-muted mt-0.5 leading-relaxed">
+                    {activeGallery.images[activeImageIndex].caption}
+                  </p>
+                )}
+              </div>
+
+              {/* Thumbnails */}
+              {activeGallery.images.length > 1 && (
+                <div className="flex items-center gap-2 shrink-0">
+                  {activeGallery.images.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImageIndex(idx)}
+                      className={`relative w-14 h-11 rounded-lg overflow-hidden border-2 transition-all ${
+                        activeImageIndex === idx
+                          ? 'border-forest ring-2 ring-forest/30 scale-105'
+                          : 'border-sage-border opacity-70 hover:opacity-100'
+                      }`}
+                    >
+                      <img
+                        src={img.url}
+                        alt={img.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

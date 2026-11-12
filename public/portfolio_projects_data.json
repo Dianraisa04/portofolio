@@ -1,0 +1,226 @@
+{
+  "projects": [
+    {
+      "id": "temporal-hkg-bertopic-collaboration-recommendation",
+      "title": "Integrating BERTopic and Heterogeneous Knowledge Graphs for Temporally-Evaluated Research Collaboration Recommendation",
+      "summary": "A research collaboration recommendation framework combining BERTopic neural topic modeling with a Heterogeneous Knowledge Graph (HKG) and FastNode2Vec node embeddings, strictly evaluated under a leak-free temporal link prediction protocol on Indonesian Computer Science publications.",
+      "category": "AI & Machine Learning",
+      "tags": [
+        "BERTopic",
+        "Heterogeneous Knowledge Graph",
+        "Link Prediction",
+        "FastNode2Vec",
+        "NLP",
+        "Temporal Evaluation",
+        "Scopus"
+      ],
+      "overview": "A large-scale scholarly recommendation system that maps topical relevance and structural co-authorship patterns from 51,502 Scopus-indexed Computer Science articles (2021-2025) into a heterogeneous knowledge graph of over 149k nodes, ranking promising unlinked collaborators through structural and graph representation fusion.",
+      "problem": "Rapid publication volume makes manual collaborator identification difficult. Purely structural methods miss topically aligned researchers lacking shared contacts, text-only methods disregard collaboration topologies, and typical random edge splits introduce temporal data leakage that inflates performance estimates.",
+      "approach": "Extracted 500 cohesive topics from publication titles and abstracts using BERTopic (Sentence-BERT, UMAP, HDBSCAN, c-TF-IDF). Constructed a heterogeneous knowledge graph comprising author, publication, and topic nodes linked by authorship, publication-topic, and co-authorship relations. Learned 128-dimensional node embeddings with FastNode2Vec. Candidate pairs sharing non-outlier topics were ranked via hybrid score fusion (0.4 embedding cosine similarity, 0.3 Adamic-Adar, 0.2 Jaccard, 0.1 Common Neighbors). Evaluated forecasting capabilities using a temporal link prediction setup (pre-2025 training vs. 2025 first-time collaborations) with architectural audits to isolate and correct representation leakage.",
+      "contribution": "Engineered an end-to-end integration of contextual topic modeling and heterogeneous knowledge graphs. Designed a score-decomposable hybrid ranking scheme balancing topological and semantic signals. Established a leakage-controlled temporal evaluation methodology based on macro-averaged per-query ranking and empirically identified substantial metric inflation caused by embedding data leakage.",
+      "results": "Generated top-20 prospective collaboration pairs exhibiting high thematic and structural proximity. Demonstrated that uncorrected temporal leakage inflated ROC-AUC to ~0.999, whereas retraining embeddings exclusively on historical data yielded an authentic, statistically robust ROC-AUC of 0.801 that significantly outperforms leak-free structural baselines.",
+      "metrics": {
+        "dataset_scale": {
+          "scopus_publications": 51502,
+          "unique_authors": 97273,
+          "non_outlier_topics": 500,
+          "hkg_nodes": 149275,
+          "hkg_edges": 2299184
+        },
+        "topic_modeling_quality": {
+          "cv_coherence": 0.7148,
+          "topic_diversity": 0.655,
+          "outlier_rate": 0.3721
+        },
+        "temporal_link_prediction": {
+          "composite_model_roc_auc": "0.801 (95% CI: 0.797 - 0.806)",
+          "composite_model_average_precision": "0.847 (95% CI: 0.843 - 0.852)",
+          "structural_baseline_roc_auc": "0.686 (95% CI: 0.682 - 0.690)"
+        },
+        "macro_averaged_per_query_ranking": {
+          "ndcg_at_5": "0.656 (vs. 0.370 structural baseline)",
+          "mrr": "0.651 (vs. 0.399 structural baseline)",
+          "recall_at_20": "> 0.99 (vs. 0.373 structural baseline)"
+        }
+      }
+    },
+    {
+      "id": "collab-identifier-bertopic-prototype",
+      "title": "Collab Identifier: A Prototype for Uncovering Research Collaboration Themes Using BERTopic",
+      "summary": "An interactive desktop and GUI analytical prototype combining BERTopic topic modeling, Cosine Similarity, and generative AI labeling to uncover latent thematic alignments and inter-institutional research collaboration opportunities.",
+      "category": "NLP & Data Science",
+      "tags": [
+        "BERTopic",
+        "NLP",
+        "Cosine Similarity",
+        "Research Intelligence",
+        "Topic Modeling",
+        "Python",
+        "Generative AI",
+        "PyQt"
+      ],
+      "overview": "A comparative scientometric intelligence platform that models publication corpora from independent institutions separately, quantifies semantic topic proximity, and visualizes direct and complementary collaboration avenues accompanied by expert-validated topic labels.",
+      "problem": "Discovering inter-institutional collaboration opportunities is challenging in interdisciplinary fields. Conventional bibliometric approaches (bibliographic coupling, citation analysis) are largely retrospective and reliant on explicit metadata, offering limited ability to uncover emerging opportunities from latent textual alignment.",
+      "approach": "Processed Scopus abstracts from PRSDI-BRIN and UNP Kediri through independent BERTopic pipelines to preserve distinct institutional semantics. Computed cross-model thematic alignment via pairwise Cosine Similarity. Leveraged an LLM (Mistral API) to synthesize c-TF-IDF keyword distributions into concise academic labels. Categorized collaboration potential into direct and complementary themes with an interactive threshold, verified via retrospective validation by professional librarians and academic researchers.",
+      "contribution": "Developed a modular NLP analytics pipeline supporting independent corpus modeling and cross-institutional thematic matching. Built an interactive GUI displaying coherence evaluations, topic distributions, similarity heatmaps, and keyword word clouds. Executed empirical threshold sensitivity analyses and validated AI-generated outputs through rigorous multi-criteria human assessment.",
+      "results": "Identified coherent prospective collaboration themes across institutions while outperforming classical LDA in topic coherence. Empirical validation by 34 domain experts corroborated that top computationally aligned recommendations were academically feasible, relevant, and practically actionable.",
+      "metrics": {
+        "cv_coherence_comparison": {
+          "prsdi_corpus": "BERTopic 0.4265 vs. LDA 0.3817 (+0.0448)",
+          "unp_kediri_corpus": "BERTopic 0.4147 vs. LDA 0.3261 (+0.0886)"
+        },
+        "validation_reliability": {
+          "librarian_topic_label_cronbach_alpha": 0.932,
+          "researcher_recommendation_cronbach_alpha": 0.962
+        },
+        "expert_assessment_scores": {
+          "mean_score_range": "3.24 - 3.94 (on a 5-point Likert scale)",
+          "top_recommendation": "Critical Thinking in Pandemic Discourse (Similarity: 0.81, Overall M: 3.94, Feasibility: 4.18, Potential Impact: 4.03)"
+        }
+      }
+    },
+    {
+      "id": "bm25-recipe-information-retrieval",
+      "title": "Recipe Information Retrieval System Using BM25",
+      "summary": "An efficient information retrieval engine designed to parse culinary documents, standardize unstructured text through NLP preprocessing, and deliver highly relevant recipe search results using the Okapi BM25 ranking function.",
+      "category": "NLP & Data Science",
+      "tags": [
+        "Information Retrieval",
+        "BM25",
+        "NLP",
+        "Text Processing",
+        "Python",
+        "Search Engine"
+      ],
+      "overview": "A dedicated document management and retrieval system allowing users to ingest food recipe records and retrieve accurate culinary instructions with sub-second execution speeds.",
+      "problem": "Unstructured culinary recipes with inconsistent naming conventions and formats cause significant search frictions, leading to low relevance and sluggish query response times in standard text search engines.",
+      "approach": "Implemented automated document ingestion with schema validation, applied NLP preprocessing steps (tokenization, stopword filtering, and stemming), and indexed document frequencies using Okapi BM25 probabilistic relevance scoring.",
+      "contribution": "Engineered the end-to-end document intake workflow, built the textual normalization pipeline, and implemented the core BM25 query-scoring engine.",
+      "results": "Delivered consistent and accurate search retrieval over culinary corpora with high fault tolerance and low response latency.",
+      "metrics": {
+        "operational_impact": "Eliminated manual search bottlenecks by providing instant, relevant document ranking across structured and semi-structured culinary data.",
+        "query_latency": "Maintained an average query execution time under 200 ms.",
+        "data_integrity": "Minimized ingestion failures and user query mismatches through automated file validation and standardized token normalization."
+      }
+    },
+    {
+      "id": "iot-flood-detection-warning",
+      "title": "Flood Detection and Early Notification System",
+      "summary": "An embedded IoT disaster mitigation system utilizing an Arduino Uno, multi-level water sensors, and the Blynk platform to provide real-time water telemetry and multi-tier early warning notifications.",
+      "category": "Mobile & IoT",
+      "tags": [
+        "IoT",
+        "Arduino Uno",
+        "Blynk",
+        "Embedded C++",
+        "Sensors",
+        "Disaster Mitigation"
+      ],
+      "overview": "A localized flood monitoring apparatus that continuously measures water elevation changes and broadcasts instant warnings through on-site hardware displays and mobile push alerts.",
+      "problem": "Flooding causes severe property damage and human risks due to rapid water accumulation and the absence of immediate, accessible early-warning systems at the community level.",
+      "approach": "Interfaced submersion sensors with an Arduino Uno microcontroller to continuously sample water levels, map signals into discrete risk categories, trigger LCD/LED indicators, and transmit push warnings via the Blynk platform.",
+      "contribution": "Assembled the physical sensor-microcontroller circuit, programmed the threshold categorization firmware, configured localized alerts, and established cloud telemetry via Blynk.",
+      "results": "Successfully deployed an operational monitoring prototype that reliably triggers real-time alerts as water levels shift across designated thresholds.",
+      "metrics": {
+        "risk_mitigation_benefit": "Significantly shortens emergency response delays for local residents by issuing automated warnings before floodwaters breach danger levels.",
+        "operational_thresholds": {
+          "safe_status": "< 10 cm",
+          "alert_status": "20 cm",
+          "danger_status": ">= 30 cm"
+        },
+        "usability_impact": "Enables remote, round-the-clock water level oversight, eliminating the hazard of manual physical inspections during severe downpours."
+      }
+    },
+    {
+      "id": "iot-smart-hydroponic-monitoring",
+      "title": "IoT-Enabled Automated Hydroponic Monitoring and Control System",
+      "summary": "An automated hydroponic infrastructure combining multi-sensor telemetry (pH, turbidity, temperature, humidity) with web-based real-time monitoring and remote actuator controls.",
+      "category": "Mobile & IoT",
+      "tags": [
+        "IoT",
+        "Microcontrollers",
+        "Web Dashboard",
+        "Sensors",
+        "Actuators",
+        "Automation"
+      ],
+      "overview": "An end-to-end cultivation management platform that captures vital environmental and water metrics, streams data as structured JSON, and allows remote control over actuators like DC pumps.",
+      "problem": "Maintaining optimal nutrient and water parameters in hydroponics requires frequent, precise adjustments; manual monitoring is labor-intensive and prone to delayed corrective actions.",
+      "approach": "Interfaced analog and digital sensors with a microcontroller, formatted telemetry into JSON payloads, and integrated a web dashboard to track environmental changes and trigger DC water pumps remotely.",
+      "contribution": "Engineered the multi-sensor acquisition firmware, structured API payloads, and established bidirectional control between the cloud dashboard and hardware actuators.",
+      "results": "Achieved continuous environmental visibility and reliable remote actuator triggering without requiring manual manual sampling.",
+      "metrics": {
+        "maintenance_efficiency": "Eliminates tedious manual water testing, drastically lowering human error in agricultural maintenance.",
+        "crop_protection_benefit": "Maintains chemical and physical water balance through immediate parameter visibility, preventing root stress and plant loss.",
+        "telemetry_scope": "Delivers real-time telemetry across temperature, humidity, pH, and water turbidity."
+      }
+    },
+    {
+      "id": "pygame-seasonal-transformations",
+      "title": "Applied Computer Graphics: Seasonal Changes Simulation",
+      "summary": "An interactive 2D/3D graphical simulation demonstrating seasonal transitions and weather dynamics using Pygame and core geometric affine transformations.",
+      "category": "Software & Graphics",
+      "tags": [
+        "Computer Graphics",
+        "Pygame",
+        "Python",
+        "Geometric Transformations",
+        "Simulation"
+      ],
+      "overview": "An educational simulation modeling environmental shifts such as solar rotation, variable precipitation, and dynamic cloud movements using programmatic transformations.",
+      "problem": "Understanding abstract mathematical transformations (rotation, translation, scaling) in computer graphics is challenging without interactive visual feedback.",
+      "approach": "Implemented affine transformation matrices to manipulate graphic primitives and sprite assets, coordinating user interaction loops and weather state transitions using Python and Pygame.",
+      "contribution": "Programmed mathematical transformation modules, designed procedural particle movements for rain, and implemented user event handlers.",
+      "results": "Built a smooth, interactive educational program that illustrates graphics transformation concepts effectively on lightweight hardware.",
+      "metrics": {
+        "educational_utility": "Transforms abstract algebraic transformation principles into clear visual demonstrations of weather physics for learners.",
+        "computational_efficiency": "Delivers responsive frame rates and dynamic animation cycles without reliance on heavy third-party rendering engines."
+      }
+    },
+    {
+      "id": "mobile-educational-quiz-app",
+      "title": "Cloud-Integrated Mobile Educational Quiz Application",
+      "summary": "A cross-platform educational assessment app leveraging Firebase Cloud Firestore and REST APIs for real-time question retrieval and seamless state management.",
+      "category": "Mobile & IoT",
+      "tags": [
+        "Mobile App",
+        "Firebase Firestore",
+        "REST API",
+        "Cloud Database",
+        "Education"
+      ],
+      "overview": "A dynamic quiz platform designed to stream educational question banks from cloud endpoints and persistent Firestore collections, eliminating hardcoded content.",
+      "problem": "Static quiz applications cannot update questions or curricula dynamically without requiring users to download complete application updates.",
+      "approach": "Connected a mobile front-end to Firebase Cloud Firestore and remote APIs, decoupling application logic from question repositories to enable instant content management.",
+      "contribution": "Architected the Firestore database schema, implemented asynchronous API data consumers, and built intuitive user response flows.",
+      "results": "Delivered a responsive mobile evaluation interface capable of pulling and presenting live question updates seamlessly.",
+      "metrics": {
+        "content_agility": "Empowers educators to add or revise question banks in real time via the cloud without mandating application reinstallation.",
+        "learning_accessibility": "Provides learners with a portable, frictionless self-assessment tool accessible on mobile devices."
+      }
+    }
+  ],
+  "organizational_experience": [
+    {
+      "organization": "Informatics Student Association of ITENAS (HMIF ITENAS)",
+      "roles": [
+        {
+          "title": "Staff of the Internal Audit Unit",
+          "period": "Jul 2024 - Dec 2024",
+          "responsibilities": [
+            "Conducted periodic evaluations and accountability reviews of student association programs and financial expenditures.",
+            "Supervised operational adherence to institutional regulations, ensuring organizational governance and transparency."
+          ]
+        },
+        {
+          "title": "Staff of the Cadre Development Division",
+          "period": "Sep 2023 - Jun 2024",
+          "responsibilities": [
+            "Designed and executed leadership training, character building, and orientation curricula for incoming informatics cohorts.",
+            "Facilitated group mentoring sessions to cultivate organizational loyalty, communication skills, and collective problem-solving."
+          ]
+        }
+      ]
+    }
+  ]
+}

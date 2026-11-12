@@ -3,7 +3,19 @@ export type ProjectCategory =
   | 'AI & Machine Learning' 
   | 'NLP & Data Science' 
   | 'Computer Vision' 
-  | 'Mobile & IoT';
+  | 'Mobile & IoT'
+  | 'Software & Graphics';
+
+export interface ProjectMetric {
+  label: string;
+  value: string;
+  description?: string;
+}
+
+export interface ProjectImpact {
+  title: string;
+  description: string;
+}
 
 export interface Project {
   id: string;
@@ -13,6 +25,7 @@ export interface Project {
   tags: string[];
   featured: boolean;
   image?: string;
+  gallery?: string[];
   githubUrl?: string;
   demoUrl?: string;
   paperUrl?: string;
@@ -21,7 +34,8 @@ export interface Project {
   approach: string;
   contribution: string[];
   results: string[];
-  metrics?: { label: string; value: string }[];
+  metrics?: ProjectMetric[];
+  impacts?: ProjectImpact[];
 }
 
 export interface ExperienceItem {
@@ -30,7 +44,7 @@ export interface ExperienceItem {
   organization: string;
   location?: string;
   period: string;
-  type: 'Work' | 'Research' | 'Education' | 'Community';
+  type: 'Work' | 'Research' | 'Education' | 'Organization' | 'Community';
   description: string;
   contributions: string[];
   skills: string[];
@@ -48,6 +62,12 @@ export interface SkillCategory {
   }[];
 }
 
+export interface DocumentationImage {
+  url: string;
+  title: string;
+  caption?: string;
+}
+
 export interface CertificationItem {
   id: string;
   title: string;
@@ -57,4 +77,6 @@ export interface CertificationItem {
   credentialId?: string;
   description: string;
   skills: string[];
+  docImage?: string;
+  gallery?: DocumentationImage[];
 }

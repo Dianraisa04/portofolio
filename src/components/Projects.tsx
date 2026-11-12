@@ -25,9 +25,9 @@ export const Projects: React.FC = () => {
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-charcoal tracking-tight">
               Featured Projects & Research
             </h2>
-            <p className="text-charcoal-muted text-base mt-2 max-w-xl">
+            {/* <p className="text-charcoal-muted text-base mt-2 max-w-xl">
               Real-world systems, thesis research, and applied models covering Machine Learning, NLP, and Computer Vision.
-            </p>
+            </p> */}
           </div>
         </div>
 
@@ -35,25 +35,23 @@ export const Projects: React.FC = () => {
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
           {projectCategories.map((category) => {
             const isActive = selectedCategory === category;
-            const count = category === 'All' 
-              ? projects.length 
+            const count = category === 'All'
+              ? projects.length
               : projects.filter(p => p.category === category).length;
 
             return (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shrink-0 flex items-center gap-2 ${
-                  isActive
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all shrink-0 flex items-center gap-2 ${isActive
                     ? 'bg-forest text-white shadow-subtle'
                     : 'bg-surface border border-sage-border text-charcoal hover:border-forest/60 hover:text-forest'
-                }`}
+                  }`}
               >
                 <span>{category}</span>
                 <span
-                  className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
-                    isActive ? 'bg-forest-active text-white' : 'bg-sage-bg text-charcoal-muted'
-                  }`}
+                  className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${isActive ? 'bg-forest-active text-white' : 'bg-sage-bg text-charcoal-muted'
+                    }`}
                 >
                   {count}
                 </span>
@@ -114,7 +112,7 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Card Action Row */}
-                <div 
+                <div
                   className="flex items-center justify-between pt-4 border-t border-sage-border/60"
                   onClick={(e) => e.stopPropagation()}
                 >
