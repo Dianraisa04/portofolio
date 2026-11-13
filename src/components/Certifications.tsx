@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Award, CheckCircle, ShieldCheck, Image as ImageIcon, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { certifications } from '../data/certifications';
+import { Award, CheckCircle, ShieldCheck, Image as ImageIcon, X, ChevronLeft, ChevronRight, BookOpen, ScrollText, FileCheck } from 'lucide-react';
+import { certifications, publications } from '../data/certifications';
 import { DocumentationImage } from '../types';
 
 export const Certifications: React.FC = () => {
@@ -118,6 +118,51 @@ export const Certifications: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Publications & Intellectual Property Subsection */}
+        <div className="mt-14">
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-sage-border text-xs font-semibold text-forest uppercase tracking-wider mb-2">
+              <BookOpen className="w-3.5 h-3.5" />
+              <span>Research Output & Copyright</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold font-heading text-charcoal tracking-tight">
+              Publications & Intellectual Property
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {publications.map((pub) => (
+              <div
+                key={pub.id}
+                className="p-6 rounded-2xl bg-surface border border-sage-border shadow-subtle hover:shadow-card hover:border-forest/40 transition-all duration-200 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="p-2 rounded-xl bg-forest-subtle border border-forest-border/40 text-forest">
+                      {pub.type === 'Journal' && <BookOpen className="w-5 h-5" />}
+                      {pub.type === 'Conference' && <ScrollText className="w-5 h-5" />}
+                      {pub.type === 'Copyright' && <FileCheck className="w-5 h-5" />}
+                    </span>
+                    <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-sage-bg border border-sage-border text-charcoal">
+                      {pub.type} • {pub.date}
+                    </span>
+                  </div>
+
+                  <h4 className="text-base font-bold font-heading text-charcoal leading-snug mb-2">
+                    {pub.title}
+                  </h4>
+                  <div className="text-xs font-semibold text-forest mb-3">
+                    {pub.venue}
+                  </div>
+                  <p className="text-xs text-charcoal-muted leading-relaxed">
+                    {pub.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

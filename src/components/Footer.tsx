@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-forest mt-1"></span>
             </a>
             <p className="text-xs text-charcoal-muted mt-1">
-              Informatics Graduate • AI / Machine Learning & Software
+              Informatics Graduate • AI & Machine Learning | Computer Networks
             </p>
           </div>
 
@@ -63,11 +63,11 @@ export const Footer: React.FC = () => {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="/Resume%20Dian%20Raisa%20Gumilar.pdf"
+              href="/CV_DIAN%20RAISA%20GUMILAR.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-full bg-surface border border-sage-border text-charcoal-muted hover:text-forest hover:border-forest transition-colors"
-              aria-label="Resume PDF"
+              aria-label="Curriculum Vitae PDF"
             >
               <FileText className="w-4 h-4" />
             </a>

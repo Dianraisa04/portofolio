@@ -2,69 +2,79 @@ import { SkillCategory } from '../types';
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: 'Languages & Core',
-    description: 'Core languages used across machine learning research, backend services, and application development.',
+    title: 'Programming & Data',
+    description: 'Core languages and data analysis libraries for machine learning, pipeline development, and software engineering.',
     skills: [
       { name: 'Python', highlight: true },
-      { name: 'TypeScript' },
-      { name: 'JavaScript' },
       { name: 'Dart' },
-      { name: 'C++' },
-      { name: 'SQL' },
-      { name: 'HTML5 / CSS3' }
-    ]
-  },
-  {
-    title: 'AI & Machine Learning',
-    description: 'Frameworks and mathematical foundations for predictive models, deep learning, and evaluation.',
-    skills: [
-      { name: 'PyTorch', highlight: true },
-      { name: 'TensorFlow / Keras' },
+      { name: 'SQL', highlight: true },
+      { name: 'Pandas', highlight: true },
+      { name: 'NumPy', highlight: true },
       { name: 'Scikit-learn', highlight: true },
-      { name: 'NumPy & Pandas', highlight: true },
-      { name: 'Data Preprocessing' },
-      { name: 'Model Evaluation' },
-      { name: 'Feature Engineering' }
+      { name: 'PyTorch', highlight: true },
+      { name: 'TensorFlow' },
+      { name: 'Git', highlight: true }
     ]
   },
   {
-    title: 'NLP & Computer Vision',
-    description: 'Specialized architectures for semantic text understanding, topic modeling, and visual perception.',
+    title: 'AI & Data Science',
+    description: 'Foundational architectures and specialized models for NLP, topic modeling, computer vision, and graph learning.',
     skills: [
+      { name: 'Machine Learning', highlight: true },
+      { name: 'Deep Learning', highlight: true },
+      { name: 'NLP', highlight: true },
       { name: 'BERTopic', highlight: true },
-      { name: 'OpenCV', highlight: true },
-      { name: 'MediaPipe', highlight: true },
-      { name: 'Hugging Face Transformers' },
-      { name: 'Sentence Transformers' },
-      { name: 'CNN / ResNet' },
-      { name: 'TF-IDF & Embeddings' }
+      { name: 'Computer Vision', highlight: true },
+      { name: 'Knowledge Graphs', highlight: true },
+      { name: 'Model Evaluation' },
+      { name: 'OpenCV' },
+      { name: 'MediaPipe' }
     ]
   },
   {
-    title: 'Web, Mobile & IoT',
-    description: 'Application frameworks for interactive demos, user interfaces, and embedded telemetry.',
+    title: 'Networking & Systems',
+    description: 'Infrastructure, enterprise routing protocols, network simulation, operating systems, and IoT telemetry.',
+    skills: [
+      { name: 'Computer Networks', highlight: true },
+      { name: 'Network Layer Protocols', highlight: true },
+      { name: 'VLAN Configuration' },
+      { name: 'OSPF Dynamic Routing', highlight: true },
+      { name: 'eNSP Simulator', highlight: true },
+      { name: 'Linux', highlight: true },
+      { name: 'IoT Telemetry' }
+    ]
+  },
+  {
+    title: 'Web, Mobile & Cloud',
+    description: 'Modern development frameworks for interactive client interfaces, cloud state, and REST microservices.',
     skills: [
       { name: 'React', highlight: true },
-      { name: 'Vite' },
       { name: 'Tailwind CSS', highlight: true },
-      { name: 'Flutter', highlight: true },
-      { name: 'FastAPI' },
-      { name: 'Flask' },
-      { name: 'ESP32 / IoT' },
-      { name: 'REST APIs' }
+      { name: 'Flutter' },
+      { name: 'Vite' },
+      { name: 'Firebase Firestore' },
+      { name: 'REST APIs', highlight: true },
+      { name: 'Postman' }
     ]
   },
   {
-    title: 'Developer Tools & Cloud',
-    description: 'Version control, experimentation environments, containerization, and collaboration workflows.',
+    title: 'Professional & Governance',
+    description: 'Cross-functional analytical thinking, team leadership, mentorship, and operational compliance audit.',
     skills: [
-      { name: 'Git & GitHub', highlight: true },
-      { name: 'Jupyter Notebook', highlight: true },
-      { name: 'VS Code' },
-      { name: 'Docker' },
-      { name: 'Firebase' },
-      { name: 'Postman' },
-      { name: 'Linux CLI' }
+      { name: 'Analytical Thinking', highlight: true },
+      { name: 'Systematic Problem Solving', highlight: true },
+      { name: 'Team Mentoring', highlight: true },
+      { name: 'Internal Audit & Governance' },
+      { name: 'Curriculum Design' },
+      { name: 'Time Management' }
+    ]
+  },
+  {
+    title: 'Languages',
+    description: 'Linguistic proficiencies for international technical collaboration and research dissemination.',
+    skills: [
+      { name: 'Indonesian (Native/Fluent)', highlight: true },
+      { name: 'English (Professional Working)', highlight: true }
     ]
   }
 ];

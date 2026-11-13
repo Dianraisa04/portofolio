@@ -15,7 +15,8 @@ export const projects: Project[] = [
     contribution: [
       'Engineered an end-to-end integration of contextual topic modeling and heterogeneous knowledge graphs over 51,502 Scopus publications.',
       'Designed a score-decomposable hybrid ranking scheme balancing topological and semantic signals.',
-      'Established a leakage-controlled temporal evaluation methodology based on macro-averaged per-query ranking and empirically identified substantial metric inflation caused by embedding data leakage.'
+      'Established a leakage-controlled temporal evaluation methodology based on macro-averaged per-query ranking and empirically identified substantial metric inflation caused by embedding data leakage.',
+      'Presented research at IEEE — The 13th International Conference on Computer, Control, Informatics, and its Applications (IC3INA).'
     ],
     results: [
       'Generated top-20 prospective collaboration pairs exhibiting high thematic and structural proximity.',
@@ -42,7 +43,9 @@ export const projects: Project[] = [
     contribution: [
       'Developed a modular NLP analytics pipeline supporting independent corpus modeling and cross-institutional thematic matching.',
       'Built an interactive GUI displaying coherence evaluations, topic distributions, similarity heatmaps, and keyword word clouds.',
-      'Executed empirical threshold sensitivity analyses and validated AI-generated outputs through rigorous multi-criteria human assessment.'
+      'Executed empirical threshold sensitivity analyses and validated AI-generated outputs through rigorous multi-criteria human assessment.',
+      'Authored the peer-reviewed research paper in Emerald Publishing (Library Hi Tech).',
+      'Secured registered software copyright (HKI - DJKI, Ministry of Law and Human Rights RI).'
     ],
     results: [
       'Identified coherent prospective collaboration themes across institutions while outperforming classical LDA in topic coherence.',

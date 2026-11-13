@@ -74,9 +74,21 @@ export interface CertificationItem {
   issuer: string;
   date: string;
   score?: string;
+  category?: 'Certification' | 'Award' | 'Publication' | 'Copyright';
   credentialId?: string;
   description: string;
   skills: string[];
   docImage?: string;
   gallery?: DocumentationImage[];
+  link?: string;
+}
+
+export interface PublicationItem {
+  id: string;
+  title: string;
+  venue: string;
+  date: string;
+  type: 'Journal' | 'Conference' | 'Copyright';
+  description: string;
+  link?: string;
 }

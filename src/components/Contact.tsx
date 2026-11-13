@@ -38,10 +38,10 @@ export const Contact: React.FC = () => {
     },
     {
       label: 'Curriculum Vitae',
-      value: 'Resume Dian Raisa Gumilar.pdf',
-      href: '/Resume%20Dian%20Raisa%20Gumilar.pdf',
+      value: 'CV_DIAN RAISA GUMILAR.pdf',
+      href: '/CV_DIAN%20RAISA%20GUMILAR.pdf',
       icon: <FileText className="w-5 h-5 text-forest" />,
-      actionText: 'Open PDF',
+      actionText: 'Open CV (PDF)',
     },
   ];
 
@@ -58,7 +58,7 @@ export const Contact: React.FC = () => {
             Have an Opportunity in Mind?
           </h2>
           <p className="text-charcoal-muted text-base mt-2 max-w-xl">
-            I'm currently seeking junior / associate roles, internships, and research collaborations in AI/ML, NLP, Computer Vision, and Software Engineering.
+            I'm currently open to opportunities, full-time roles, and research collaborations across AI/ML, NLP, Computer Networks, and Software Engineering.
           </p>
         </div>
 
