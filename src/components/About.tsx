@@ -5,27 +5,27 @@ export const About: React.FC = () => {
   const highlights = [
     {
       icon: <GraduationCap className="w-5 h-5 text-forest" />,
-      title: 'Bachelor of Computer Science (S.Kom)',
-      subtitle: 'Bandung National Institute of Technology (ITENAS)',
-      description: 'Graduated with Cum Laude honors (GPA: 3.58/4.00). Focused coursework in algorithms, machine learning systems, applied mathematics, and software development'
-    },
-    {
-      icon: <FlaskConical className="w-5 h-5 text-forest" />,
-      title: 'Applied AI Research',
-      subtitle: 'BRIN Contributor & Thesis',
-      description: 'Experience handling text mining, topic modeling with BERTopic, and semantic graph algorithms.'
-    },
-    {
-      icon: <Users className="w-5 h-5 text-forest" />,
-      title: 'Academic Mentorship',
-      subtitle: 'Machine Learning Lab Assistant',
-      description: 'Instructed practicum sessions, evaluated PyTorch assignments, and mentored 50+ undergraduate students in ML fundamentals.'
+      title: 'Bachelor of Informatics (Cum Laude)',
+      subtitle: 'Institut Teknologi Nasional Bandung (Itenas)',
+      description: 'Graduated with Cum Laude honors (GPA: 3.58 / 4.00). Specialization in Artificial Intelligence, Machine Learning, Deep Learning, and Computer Networks.'
     },
     {
       icon: <Award className="w-5 h-5 text-forest" />,
-      title: 'Certified Competence',
-      subtitle: 'HCIA - AI (Score 960/1000)',
-      description: 'Certified in foundational deep learning, computer vision architectures, and neural network engineering.'
+      title: '1st Place National Winner',
+      subtitle: 'Huawei ICT Competition 2025–2026',
+      description: 'National 1st Place Champion in Computing Track, solving advanced networking and cloud-computing challenges under high-stakes competition environments.'
+    },
+    {
+      icon: <FlaskConical className="w-5 h-5 text-forest" />,
+      title: 'Applied R&D & Publications',
+      subtitle: 'BRIN Contributor & Author',
+      description: 'Engineered "Collab Identifier" prototype at BRIN; published in Emerald Library Hi Tech, IEEE IC3INA, and awarded registered HKI software copyright.'
+    },
+    {
+      icon: <Users className="w-5 h-5 text-forest" />,
+      title: 'Academic Mentorship & Labs',
+      subtitle: 'ML & Computer Networks TA',
+      description: 'Instructed 50+ students in ML data science modules and led hands-on networking lab practicums on VLAN segmentation and OSPF dynamic routing.'
     }
   ];
 
@@ -49,13 +49,13 @@ export const About: React.FC = () => {
           <div className="lg:col-span-7 space-y-5 text-base sm:text-lg text-charcoal-muted leading-relaxed">
             <div className="p-6 rounded-2xl bg-surface border border-sage-border shadow-subtle">
               <p className="text-charcoal font-medium text-lg mb-3">
-                Informatics graduate from Institut Teknologi Nasional (ITENAS) Bandung with a core focus on Machine Learning, Natural Language Processing, and Computer Vision.
+                Informatics graduate from Institut Teknologi Nasional (Itenas) Bandung specializing in Artificial Intelligence, Machine Learning, and Computer Networks.
               </p>
               <p className="mb-4">
-                I focus on developing practical systems across <strong className="text-charcoal font-semibold">Machine Learning, Natural Language Processing, and Computer Vision</strong> to solve tangible problems—ranging from parsing research literature and analyzing text topics, to processing facial expressions and sign language translation.
+                Proficient in Python-based data processing, Natural Language Processing (NLP), and predictive model evaluation. I focus on developing impactful systems across <strong className="text-charcoal font-semibold">AI & Machine Learning, Topic Modeling, and Computer Vision</strong> to solve tangible real-world problems—from evaluating scholarly collaboration patterns to real-time interactive systems.
               </p>
               <p>
-                During my studies, I served as a <strong className="text-charcoal font-semibold">Machine Learning Laboratory Assistant</strong>, guiding peers through model training, evaluation, and debugging. In parallel, I contributed to applied research at <strong className="text-charcoal font-semibold">BRIN (Badan Riset dan Inovasi Nasional)</strong>, focusing on text representation, topic modeling, and data workflows.
+                Experienced as a <strong className="text-charcoal font-semibold">Machine Learning and Computer Networks Teaching Assistant</strong> at Itenas, as well as an R&D contributor at <strong className="text-charcoal font-semibold">BRIN (National Research and Innovation Agency)</strong> resulting in registered HKI software copyright and peer-reviewed international publications.
               </p>
             </div>
 

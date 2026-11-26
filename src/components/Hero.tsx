@@ -28,9 +28,7 @@ export const Hero: React.FC = () => {
 
             {/* Concise Description */}
             <p className="text-lg sm:text-xl text-charcoal-muted leading-relaxed mb-8 max-w-2xl font-normal">
-              With an interest in AI and software engineering, I work across Machine Learning,
-              Natural Language Processing, Computer Vision, and software development.
-              I enjoy transforming theoretical models into reliable, human-centric software solutions.
+              Informatics graduate from Institut Teknologi Nasional (Itenas) Bandung specializing in Artificial Intelligence, Machine Learning, and Computer Networks. Focused on turning analytical models into reliable, high-impact software solutions.
             </p>
 
             {/* CTAs */}
@@ -91,6 +89,9 @@ export const Hero: React.FC = () => {
               <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface/70 border border-sage-border">
                 <Terminal className="w-3.5 h-3.5 text-forest" />
                 Topic Modeling & NLP
+              </span>
+              <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface/70 border border-sage-border">
+                Computer Networks
               </span>
               <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface/70 border border-sage-border">
                 Computer Vision

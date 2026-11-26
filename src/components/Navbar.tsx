@@ -82,16 +82,16 @@ export const Navbar: React.FC<NavbarProps> = () => {
             })}
           </nav>
 
-          {/* Action Button: Resume */}
+          {/* Action Button: CV */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="/Resume%20Dian%20Raisa%20Gumilar.pdf"
+              href="/CV_DIAN%20RAISA%20GUMILAR.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-surface border border-sage-border text-charcoal hover:border-forest hover:text-forest hover:shadow-subtle transition-all duration-200"
             >
               <FileText className="w-4 h-4 text-forest" />
-              <span>Resume</span>
+              <span>CV / Resume</span>
               <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
             </a>
           </div>
@@ -131,14 +131,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
             })}
             <div className="pt-3 border-t border-sage-border mt-2">
               <a
-                href="/Resume%20Dian%20Raisa%20Gumilar.pdf"
+                href="/CV_DIAN%20RAISA%20GUMILAR.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-forest text-white font-medium hover:bg-forest-hover transition-colors"
               >
                 <FileText className="w-4 h-4" />
-                <span>View Full Resume</span>
+                <span>View Full CV / Resume</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
