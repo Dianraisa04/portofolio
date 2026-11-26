@@ -44,11 +44,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
           ? 'bg-sage-bg/90 backdrop-blur-md border-b border-sage-border shadow-subtle py-3.5'
           : 'bg-transparent py-5'
-      }`}
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -70,11 +69,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <a
                   key={link.id}
                   href={link.href}
-                  className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all ${
-                    isActive
+                  className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all ${isActive
                       ? 'bg-forest text-white shadow-sm'
                       : 'text-charcoal hover:text-forest hover:bg-forest-subtle/50'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -91,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-surface border border-sage-border text-charcoal hover:border-forest hover:text-forest hover:shadow-subtle transition-all duration-200"
             >
               <FileText className="w-4 h-4 text-forest" />
-              <span>CV / Resume</span>
+              <span>Resume</span>
               <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
             </a>
           </div>
@@ -119,11 +117,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   key={link.id}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2.5 rounded-lg text-base font-medium transition-colors ${
-                    isActive
+                  className={`px-4 py-2.5 rounded-lg text-base font-medium transition-colors ${isActive
                       ? 'bg-forest text-white'
                       : 'text-charcoal hover:bg-sage-bg/60'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -138,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg bg-forest text-white font-medium hover:bg-forest-hover transition-colors"
               >
                 <FileText className="w-4 h-4" />
-                <span>View Full CV / Resume</span>
+                <span>View Full Resume</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
